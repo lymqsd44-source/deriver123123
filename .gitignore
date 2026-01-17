@@ -1,0 +1,52 @@
+# MacOS
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Android
+android/app/build
+android/.gradle
+android/captures
+android/local.properties
+*.iml
+.idea
+.gradle
+
+# iOS
+ios/build
+ios/Pods
+ios/DerivedData
+ios/*.xcworkspace
+ios/*.xcodeproj/project.xcworkspace
+ios/*.xcodeproj/xcuserdata
+
+# Buck
+.buckd/
+buck-out/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Temporary Files
+*~
+*.swp
+*.tmp
+
+# Artifacts
+android/app/release.keystore
+android/app/debug.keystore
+android/app/google-services.json
+qaramurt.keystore.bak
+debug.keystore.bak
+keystore.txt
+android_backup.md
+task.md
+implementation_plan.md
+walkthrough.md
+github_secrets_guide.md
