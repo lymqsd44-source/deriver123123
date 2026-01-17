@@ -14,7 +14,7 @@ const initialContextVal = {
   viewRtlStyle: 'row',
   viewSelfRtlStyle: 'flex-end',
   token: '',
-  setToken: '',
+  setToken: () => { },
   accountDetail: '',
   setAccountDetail: () => { },
   documentDetail: '',
@@ -39,8 +39,8 @@ export const AppContextProvider = (props: any) => {
   const [notificationValue, setNotificationValues] = useState(false);
   const [categoryIndex, setCategoryIndex] = useState<number>(null)
   const Google_Map_Key = Platform.OS === 'android'
-    ? 'google_maps_key_for_android'
-    : 'google_maps_key_for_ios'
+    ? 'AIzaSyAM_yzWXR0sgNHhxX2ZY6SChwGzBa0K3DM'
+    : 'AIzaSyAM_yzWXR0sgNHhxX2ZY6SChwGzBa0K3DM'
 
   useEffect(() => {
     const fetchFromStorage = async () => {
@@ -88,9 +88,9 @@ export const AppContextProvider = (props: any) => {
   useEffect(() => {
     const notificationFromStorage = async () => {
       try {
-        const notificationValue = await AsyncStorage.getItem('isNotificationOn')
-        if (notificationValue) {
-          setNotificationValues(notificationValue)
+        const value = await AsyncStorage.getItem('isNotificationOn')
+        if (value !== null) {
+          setNotificationValues(JSON.parse(value))
         }
       } catch (error) {
       }
