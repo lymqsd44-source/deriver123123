@@ -91,6 +91,13 @@ export function Splash() {
           replace('NoInternalServer');
           return;
         }
+
+        // Save default language for API fallback
+        const defaultLang = res?.values?.general?.default_language?.locale;
+        if (defaultLang) {
+          await setValue('defaultLanguage', defaultLang);
+        }
+
         await dispatch(translateDataGet());
         await dispatch(selfDriverData());
       } catch (error) {

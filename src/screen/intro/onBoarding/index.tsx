@@ -57,29 +57,10 @@ export function OnBoarding() {
           return
         }
 
-        if (!settingData?.values?.general?.default_language) {
-          return
-        }
-
-        const defaultLangObj = settingData?.values.general.default_language
-
-        if (typeof defaultLangObj !== 'object' || !defaultLangObj.locale) {
-          return
-        }
-
-        const defaultLang = defaultLangObj?.locale
-        if (!languageData?.data || languageData?.data.length === 0) {
-          return
-        }
-
-        const matchingLang = languageData.data.find(
-          (lang: any) => lang.locale === defaultLang,
-        )
-
-        if (matchingLang) {
-          setSelectedLanguage(matchingLang.locale)
-          await setValue('selectedLanguage', matchingLang.locale)
-        } else {
+        const defaultLang = settingData?.values?.general?.default_language?.locale
+        if (defaultLang) {
+          setSelectedLanguage(defaultLang)
+          await setValue('selectedLanguage', defaultLang)
         }
       } catch (error) { }
     }
@@ -170,12 +151,12 @@ export function OnBoarding() {
                     if (!selectedValue) return
 
                     setSelectedLanguage(selectedValue)
+                    try {
+                      await setValue('selectedLanguage', selectedValue)
+                    } catch (error) { }
                     dispatch(settingDataGet())
                     dispatch(translateDataGet())
                     dispatch(taxidosettingDataGet())
-                    try {
-                      await setValue('selectedLanguage', JSON.stringify(selectedValue))
-                    } catch (error) { }
                   }}
                   setItems={setItems}
                   onChangeValue={handleLanguageChange}
@@ -194,17 +175,17 @@ export function OnBoarding() {
                   style={styles.dropdown}
                   textStyle={{ color: colors.text, fontSize: fontSizes.FONT4 }}
                   theme={isDark ? 'DARK' : 'LIGHT'}
-                    ArrowDownIconComponent={({ style }) => (
-                            <View style={[{ transform: [{ rotate: '-90deg' }] }]}>
-                                <Icons.Back color={colors.text} />
-                            </View>
-                        )}
-                        ArrowUpIconComponent={({ style }) => (
-                            <View style={[{ transform: [{ rotate: '90deg' }] }]}>
+                  ArrowDownIconComponent={({ style }) => (
+                    <View style={[{ transform: [{ rotate: '-90deg' }] }]}>
+                      <Icons.Back color={colors.text} />
+                    </View>
+                  )}
+                  ArrowUpIconComponent={({ style }) => (
+                    <View style={[{ transform: [{ rotate: '90deg' }] }]}>
 
-                                <Icons.Back color={colors.text} />
-                            </View>
-                        )}
+                      <Icons.Back color={colors.text} />
+                    </View>
+                  )}
                 />
                 <TouchableOpacity activeOpacity={0.7} onPress={handleNavigation}>
                   <Text

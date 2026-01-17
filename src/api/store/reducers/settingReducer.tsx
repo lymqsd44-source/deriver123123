@@ -15,7 +15,7 @@ const initialState: CurrencyInterface = {
   taxidoSettingData: [],
   languageData: [],
   planData: [],
-  translateData: [],
+  translateData: {},
   loading: false,
   success: false,
 }
