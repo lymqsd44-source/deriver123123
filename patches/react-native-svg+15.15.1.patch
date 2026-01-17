@@ -1,11 +1,11 @@
 diff --git a/node_modules/react-native-svg/common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp b/node_modules/react-native-svg/common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp
-index 1234567..89abcde 100644
+index 89fabdc..0cbe562 100644
 --- a/node_modules/react-native-svg/common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp
 +++ b/node_modules/react-native-svg/common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp
-@@ -28,8 +28,13 @@ void RNSVGLayoutableShadowNode::layout(LayoutContext layoutContext) {
-   layoutContext.affectedNodes = nullptr;
- 
-   auto style = getStyle();
+@@ -26,8 +26,13 @@ void RNSVGLayoutableShadowNode::updatePosition() {
+   auto style = yogaNode_.style();
+   style.setPositionType(yoga::PositionType::Absolute);
+   style.setPosition(yoga::Edge::All, yoga::Style::Length::points(0));
 -  style.setDimension(yoga::Dimension::Width, yoga::StyleSizeLength::percent(100));
 -  style.setDimension(yoga::Dimension::Height, yoga::StyleSizeLength::percent(100));
 +#if REACT_NATIVE_MINOR_VERSION >= 77
@@ -15,6 +15,5 @@ index 1234567..89abcde 100644
 +  style.setDimension(yoga::Dimension::Width, yoga::StyleSizeLength::percent(100));
 +  style.setDimension(yoga::Dimension::Height, yoga::StyleSizeLength::percent(100));
 +#endif
-   setStyle(style);
- 
-   ConcreteShadowNode::layout(layoutContext);
+   yogaNode_.setStyle(style);
+ }
