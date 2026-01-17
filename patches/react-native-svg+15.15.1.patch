@@ -1,8 +1,14 @@
-diff --git a/node_modules/react-native-svg/common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp b/node_modules/react-native-svg/common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp
-index 89fabdc..0cbe562 100644
---- a/node_modules/react-native-svg/common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp
-+++ b/node_modules/react-native-svg/common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp
-@@ -26,8 +26,13 @@ void RNSVGLayoutableShadowNode::updatePosition() {
+diff --git a/common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp b/common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp
+--- a/common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp
++++ b/common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp
+@@ -21,14 +21,19 @@
+ void RNSVGLayoutableShadowNode::updatePosition() {
+   // SVG handles its layout manually on the native side and does not depend on
+   // the Yoga layout. Setting the dimensions to absolute fill is a hack for measure 
+   // to return "correct" layout metrics when onPress is tested. It also eliminates 
+   // randomly positioned views in the layout inspector when Yoga attempts to interpret 
+   // SVG properties like width when viewBox scale is set. Ideal solution would be to 
+   // return correct bounding box from native side in getLayoutMetrics.
    auto style = yogaNode_.style();
    style.setPositionType(yoga::PositionType::Absolute);
    style.setPosition(yoga::Edge::All, yoga::Style::Length::points(0));
