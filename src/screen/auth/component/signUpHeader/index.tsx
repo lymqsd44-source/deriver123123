@@ -42,7 +42,7 @@ export function Header({
       )}
       <View style={[styles.header, { flexDirection: viewRtlStyle }]}>
         <Image
-          source={isDark ? images.splashDark : images.splash}
+          source={isDark ? images.splash_dark : images.splash}
           style={styles.imageLogo}
         />
       </View>

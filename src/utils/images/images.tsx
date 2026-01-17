@@ -15,7 +15,7 @@ const Images = {
   bgDarkOnboard: require('../../assets/images/bgDarkOnboard.png'),
   otp: require('../../assets/images/otp.png'),
   splash: require('../../assets/images/splash.png'),
-  splashDark: require('../../assets/images/splashDark.png'),
+  splash_dark: require('../../assets/images/splash_dark.png'),
   ProfileDefault: require('../../assets/images/ProfileDefault.png'),
   imgCarNormal: require('../../assets/images/regularCarImg.png'),
   imgCarFront: require('../../assets/images/frontCarImg.png'),

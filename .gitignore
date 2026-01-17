@@ -39,9 +39,9 @@ fastlane/test_output
 *.tmp
 
 # Artifacts
-android/app/release.keystore
-android/app/debug.keystore
-android/app/google-services.json
+# Pushing these for reliable cloud build since repo is public and keys are currently embedded anyway
+# android/app/release.keystore
+# android/app/google-services.json
 qaramurt.keystore.bak
 debug.keystore.bak
 keystore.txt

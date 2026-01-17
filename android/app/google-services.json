@@ -1,0 +1,190 @@
+{
+  "project_info": {
+    "project_number": "16461124774",
+    "project_id": "qaramurt-taxi",
+    "storage_bucket": "qaramurt-taxi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16461124774:android:2b423e1b37bb1abb521067",
+        "android_client_info": {
+          "package_name": "com.qaramurt.taxiuser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16461124774-rsfj6mib28ucp02uo473llse47h5l361.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvOms0mfySLCmlIR6-aBbVm1XvbeQPcF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16461124774-rsfj6mib28ucp02uo473llse47h5l361.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "16461124774-jhae3pf8foc1ork2qpps8a7epsqqpmku.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.qaramurttaxi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16461124774:android:71170e844e84ec32521067",
+        "android_client_info": {
+          "package_name": "com.qaramurttaxi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16461124774-rsfj6mib28ucp02uo473llse47h5l361.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvOms0mfySLCmlIR6-aBbVm1XvbeQPcF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16461124774-rsfj6mib28ucp02uo473llse47h5l361.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "16461124774-jhae3pf8foc1ork2qpps8a7epsqqpmku.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.qaramurttaxi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16461124774:android:51e996bbc6d635d9521067",
+        "android_client_info": {
+          "package_name": "com.qaramurttaxi.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16461124774-rsfj6mib28ucp02uo473llse47h5l361.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvOms0mfySLCmlIR6-aBbVm1XvbeQPcF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16461124774-rsfj6mib28ucp02uo473llse47h5l361.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "16461124774-jhae3pf8foc1ork2qpps8a7epsqqpmku.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.qaramurttaxi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16461124774:android:12c7b30853a32181521067",
+        "android_client_info": {
+          "package_name": "com.qaramurttaxi.userapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16461124774-rsfj6mib28ucp02uo473llse47h5l361.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvOms0mfySLCmlIR6-aBbVm1XvbeQPcF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16461124774-rsfj6mib28ucp02uo473llse47h5l361.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "16461124774-jhae3pf8foc1ork2qpps8a7epsqqpmku.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.qaramurttaxi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16461124774:android:0d86cfd7e64b881b521067",
+        "android_client_info": {
+          "package_name": "com.qaramurttaxiuserapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16461124774-rsfj6mib28ucp02uo473llse47h5l361.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvOms0mfySLCmlIR6-aBbVm1XvbeQPcF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16461124774-rsfj6mib28ucp02uo473llse47h5l361.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "16461124774-jhae3pf8foc1ork2qpps8a7epsqqpmku.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.qaramurttaxi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
