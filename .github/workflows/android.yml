@@ -35,8 +35,8 @@ jobs:
         env:
           MYAPP_RELEASE_STORE_FILE: release.keystore
           MYAPP_RELEASE_KEY_ALIAS: "key0"
-          MYAPP_RELEASE_STORE_PASSWORD: "password"
-          MYAPP_RELEASE_KEY_PASSWORD: "password"
+          MYAPP_RELEASE_STORE_PASSWORD: "android"
+          MYAPP_RELEASE_KEY_PASSWORD: "android"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
