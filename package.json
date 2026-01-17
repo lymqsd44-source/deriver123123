@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "postinstall": "patch-package",
+    "postinstall": "node scripts/fix-rn-svg.js",
     "start": "react-native start",
     "test": "jest"
   },
@@ -89,7 +89,6 @@
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^10.1.1",
     "jest": "^29.6.2",
-    "patch-package": "^8.0.0",
     "metro-react-native-babel-preset": "0.76.8",
     "prettier": "^2.8.8",
     "react-test-renderer": "18.3.1",
