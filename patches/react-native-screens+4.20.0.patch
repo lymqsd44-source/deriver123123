@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-native-screens/src/fabric/ScreenStackHeaderConfigNativeComponent.ts b/node_modules/react-native-screens/src/fabric/ScreenStackHeaderConfigNativeComponent.ts
+index c6d5fec..a0b1c2d 100644
+--- a/node_modules/react-native-screens/src/fabric/ScreenStackHeaderConfigNativeComponent.ts
++++ b/node_modules/react-native-screens/src/fabric/ScreenStackHeaderConfigNativeComponent.ts
+@@ -1,7 +1,8 @@
+ 'use client';
+ 
+ import { codegenNativeComponent } from 'react-native';
+-import type { CodegenTypes as CT, ViewProps, ColorValue } from 'react-native';
++import type { ViewProps, ColorValue } from 'react-native';
++import type * as CT from 'react-native/Libraries/Types/CodegenTypes';
+ 
+ type DirectionType = 'rtl' | 'ltr';
