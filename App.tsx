@@ -32,10 +32,14 @@ let checkOverlayPermission: (() => Promise<boolean>) | undefined
 const PERMISSION_EXPLANATION_SHOWN = 'PERMISSION_EXPLANATION_SHOWN'
 
 if (Platform.OS === 'android') {
-  const chatHead = require('react-native-chat-head') as ChatHeadModule
-  showChatHead = chatHead.showChatHead
-  hideChatHead = chatHead.hideChatHead
-  checkOverlayPermission = chatHead.checkOverlayPermission
+  try {
+    const chatHead = require('react-native-chat-head') as ChatHeadModule
+    showChatHead = chatHead.showChatHead
+    hideChatHead = chatHead.hideChatHead
+    checkOverlayPermission = chatHead.checkOverlayPermission
+  } catch (e) {
+    console.error("Failed to load chat-head module", e)
+  }
 }
 
 const AppGuards = () => {
