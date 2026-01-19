@@ -773,7 +773,7 @@
       "platforms": {
         "ios": {
           "podspecPath": "E:\\last-taxi-deriver\\Taxido_driver - Copy - Copy\\node_modules\\react-native-svg\\RNSVG.podspec",
-          "version": "15.14.0",
+          "version": "15.15.1",
           "configurations": [],
           "scriptPhases": []
         },
@@ -842,30 +842,6 @@
             "RNCWebViewComponentDescriptor"
           ],
           "cmakeListsPath": "E:/last-taxi-deriver/Taxido_driver - Copy - Copy/node_modules/react-native-webview/android/build/generated/source/codegen/jni/CMakeLists.txt",
-          "cxxModuleCMakeListsModuleName": null,
-          "cxxModuleCMakeListsPath": null,
-          "cxxModuleHeaderName": null,
-          "isPureCxxDependency": false
-        }
-      }
-    },
-    "@react-native-firebase/firestore": {
-      "root": "E:\\last-taxi-deriver\\Taxido_driver - Copy - Copy\\node_modules\\@react-native-firebase\\firestore",
-      "name": "@react-native-firebase/firestore",
-      "platforms": {
-        "ios": {
-          "podspecPath": "E:\\last-taxi-deriver\\Taxido_driver - Copy - Copy\\node_modules\\@react-native-firebase\\firestore\\RNFBFirestore.podspec",
-          "version": "21.14.0",
-          "configurations": [],
-          "scriptPhases": []
-        },
-        "android": {
-          "sourceDir": "E:\\last-taxi-deriver\\Taxido_driver - Copy - Copy\\node_modules\\@react-native-firebase\\firestore\\android",
-          "packageImportPath": "import io.invertase.firebase.firestore.ReactNativeFirebaseFirestorePackage;",
-          "packageInstance": "new ReactNativeFirebaseFirestorePackage()",
-          "buildTypes": [],
-          "componentDescriptors": [],
-          "cmakeListsPath": "E:/last-taxi-deriver/Taxido_driver - Copy - Copy/node_modules/@react-native-firebase/firestore/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
