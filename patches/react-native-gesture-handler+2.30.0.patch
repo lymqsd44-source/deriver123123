@@ -1,0 +1,27 @@
+diff --git a/node_modules/react-native-gesture-handler/android/paper/src/main/java/com/facebook/react/viewmanagers/RNGestureHandlerButtonManagerInterface.java b/node_modules/react-native-gesture-handler/android/paper/src/main/java/com/facebook/react/viewmanagers/RNGestureHandlerButtonManagerInterface.java
+index 455a73e..b54a321 100644
+--- a/node_modules/react-native-gesture-handler/android/paper/src/main/java/com/facebook/react/viewmanagers/RNGestureHandlerButtonManagerInterface.java
++++ b/node_modules/react-native-gesture-handler/android/paper/src/main/java/com/facebook/react/viewmanagers/RNGestureHandlerButtonManagerInterface.java
+@@ -11,8 +11,7 @@ package com.facebook.react.viewmanagers;
+ 
+ import android.view.View;
+ import androidx.annotation.Nullable;
+-import com.facebook.react.uimanager.ViewManagerWithGeneratedInterface;
+ 
+-public interface RNGestureHandlerButtonManagerInterface<T extends View> extends ViewManagerWithGeneratedInterface {
++public interface RNGestureHandlerButtonManagerInterface<T extends View> {
+   void setExclusive(T view, boolean value);
+   void setForeground(T view, boolean value);
+diff --git a/node_modules/react-native-gesture-handler/android/paper/src/main/java/com/facebook/react/viewmanagers/RNGestureHandlerRootViewManagerInterface.java b/node_modules/react-native-gesture-handler/android/paper/src/main/java/com/facebook/react/viewmanagers/RNGestureHandlerRootViewManagerInterface.java
+index 732b1a5..c81d5f2 100644
+--- a/node_modules/react-native-gesture-handler/android/paper/src/main/java/com/facebook/react/viewmanagers/RNGestureHandlerRootViewManagerInterface.java
++++ b/node_modules/react-native-gesture-handler/android/paper/src/main/java/com/facebook/react/viewmanagers/RNGestureHandlerRootViewManagerInterface.java
+@@ -10,7 +10,6 @@ package com.facebook.react.viewmanagers;
+ 
+ import android.view.View;
+-import com.facebook.react.uimanager.ViewManagerWithGeneratedInterface;
+ 
+-public interface RNGestureHandlerRootViewManagerInterface<T extends View> extends ViewManagerWithGeneratedInterface {
++public interface RNGestureHandlerRootViewManagerInterface<T extends View> {
+   void setUnstable_forceActive(T view, boolean value);
+ }
