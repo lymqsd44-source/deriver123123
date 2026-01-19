@@ -1,8 +1,8 @@
 diff --git a/node_modules/react-native-screens/src/fabric/ScreenStackHeaderConfigNativeComponent.ts b/node_modules/react-native-screens/src/fabric/ScreenStackHeaderConfigNativeComponent.ts
-index fcbb268..67b706d 100644
+index fcbb268..f17850b 100644
 --- a/node_modules/react-native-screens/src/fabric/ScreenStackHeaderConfigNativeComponent.ts
 +++ b/node_modules/react-native-screens/src/fabric/ScreenStackHeaderConfigNativeComponent.ts
-@@ -1,7 +1,8 @@
+@@ -1,14 +1,12 @@
  'use client';
  
  import { codegenNativeComponent } from 'react-native';
@@ -12,3 +12,20 @@ index fcbb268..67b706d 100644
  
  type DirectionType = 'rtl' | 'ltr';
  
+-// eslint-disable-next-line @typescript-eslint/ban-types
+-type OnAttachedEvent = Readonly<{}>;
+-// eslint-disable-next-line @typescript-eslint/ban-types
+-type OnDetachedEvent = Readonly<{}>;
++
+ 
+ type OnPressHeaderBarButtonItemEvent = Readonly<{ buttonId: string }>;
+ type OnPressHeaderBarButtonMenuItemEvent = Readonly<{ menuId: string }>;
+@@ -41,8 +39,6 @@ type BlurEffect =
+ type UserInterfaceStyle = 'unspecified' | 'light' | 'dark';
+ 
+ export interface NativeProps extends ViewProps {
+-  onAttached?: CT.DirectEventHandler<OnAttachedEvent>;
+-  onDetached?: CT.DirectEventHandler<OnDetachedEvent>;
+   backgroundColor?: ColorValue;
+   backTitle?: string;
+   backTitleFontFamily?: string;
