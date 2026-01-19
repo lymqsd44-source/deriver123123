@@ -113,7 +113,7 @@ export function LoginView({
         return;
       }
     } else {
-      setError(translateData.validPhoneEmail);
+      setError(translateData?.validPhoneEmail || 'Please enter a valid phone number or email');
       setDriverLoading(false);
       return;
     }
@@ -144,7 +144,7 @@ export function LoginView({
         return;
       }
     } else {
-      setError(translateData.validPhoneEmail);
+      setError(translateData?.validPhoneEmail || 'Please enter a valid phone number or email');
       if (setFleetLoading) setFleetLoading(false);
       return;
     }
@@ -190,8 +190,8 @@ export function LoginView({
     >
       <View style={styles.subView}>
         <AuthTitle
-          title={translateData.authTitle}
-          subTitle={translateData.subTitle}
+          title={translateData?.authTitle || 'Welcome Back'}
+          subTitle={translateData?.subTitle || 'Please sign in to your account'}
         />
 
         <View
@@ -246,7 +246,7 @@ export function LoginView({
           )}
 
           <InputBox
-            placeholder={translateData.enterPhoneandEmailBoth}
+            placeholder={translateData?.enterPhoneandEmailBoth || 'Enter Phone or Email'}
             placeholderTextColor={
               isDark ? appColors.darkText : appColors.secondaryFont
             }
@@ -286,7 +286,7 @@ export function LoginView({
           <View style={{ width: '50%' }}>
             <Button
               onPress={() => handleGetOTP('driver')}
-              title={translateData?.driver}
+              title={translateData?.driver || 'Driver'}
               backgroundColor={appColors.primary}
               color={appColors.white}
               loading={driverLoading} />
@@ -294,7 +294,7 @@ export function LoginView({
           <View style={{ width: '50%' }}>
             <Button
               onPress={() => handleGetOTPFleet('fleet')}
-              title={translateData?.fleet}
+              title={translateData?.fleet || 'Fleet'}
               backgroundColor={appColors.primary}
               color={appColors.white}
               loading={fleetLoading} />

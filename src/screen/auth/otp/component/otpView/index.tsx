@@ -58,7 +58,7 @@ const OtpView: React.FC = () => {
       setWarning('')
     }
     else {
-      setWarning(translateData?.validOtpEnter)
+      setWarning(translateData?.validOtpEnter || 'Please enter a valid OTP')
     }
   }
 
@@ -139,7 +139,7 @@ const OtpView: React.FC = () => {
           })
           dispatch(settingDataGet())
           setSuccess(false)
-          setMessage(translateData.noLinkAccount)
+          setMessage(translateData?.noLinkAccount || 'No account linked with this number')
         } else if (!res.success) {
           setSuccess(false)
           setMessage(res.message)
@@ -148,14 +148,14 @@ const OtpView: React.FC = () => {
       .catch((error: any) => {
         setLoading(false)
         setSuccess(false)
-        setMessage(translateData.verifyWarn)
+        setMessage(translateData?.verifyWarn || 'Verification failed')
       })
   }
 
 
   const handleVerifyFleet = async () => {
     if (!enteredOtp || enteredOtp.length < 6) {
-      setWarning(translateData.validOtpEnter)
+      setWarning(translateData?.validOtpEnter || 'Please enter a valid OTP')
       return
     }
 
@@ -210,7 +210,7 @@ const OtpView: React.FC = () => {
           })
           dispatch(settingDataGet())
           setSuccess(false)
-          setMessage(translateData.noLinkAccount)
+          setMessage(translateData?.noLinkAccount || 'No account linked with this number')
         } else if (!res.success) {
           setSuccess(false)
           setMessage(res.message)
@@ -218,7 +218,7 @@ const OtpView: React.FC = () => {
       })
       .catch((error: any) => {
         setSuccess(false)
-        setMessage(translateData.verifyWarn)
+        setMessage(translateData?.verifyWarn || 'Verification failed')
       })
   }
 
@@ -250,7 +250,7 @@ const OtpView: React.FC = () => {
       const fullPhoneNumber = `+${formatCountryCode(countryCode)}${sanitizedPhone}`;
       const confirmation = await auth().signInWithPhoneNumber(fullPhoneNumber);
     } catch (error: any) {
-      Alert.alert(translateData.errorsendingOTP, error.message || translateData.somethingwentwrong);
+      Alert.alert(translateData?.errorsendingOTP || 'Error', error.message || translateData?.somethingwentwrong || 'Something went wrong');
     }
   }
 
@@ -280,7 +280,7 @@ const OtpView: React.FC = () => {
 
   const handleVerifyOtp = async () => {
     if (!enteredOtp || enteredOtp.length < 6) {
-      setWarning(translateData.validOtpEnter)
+      setWarning(translateData?.validOtpEnter || 'Please enter a valid OTP')
       return
     }
 
@@ -319,7 +319,7 @@ const OtpView: React.FC = () => {
             })
           }
         } catch (apiError) {
-          Alert.alert(translateData.error, translateData.loginFailed)
+          Alert.alert(translateData?.error || 'Error', translateData?.loginFailed || 'Login failed')
         } finally {
           setFirebaseloading(false)
         }
@@ -329,12 +329,12 @@ const OtpView: React.FC = () => {
         if (!called) {
           called = true
           unsubscribe()
-          Alert.alert(translateData.error, translateData.authenticationtimedout)
+          Alert.alert(translateData?.error || 'Error', translateData?.authenticationtimedout || 'Authentication timed out')
           setFirebaseloading(false)
         }
       }, 5000)
     } catch (error) {
-      Alert.alert(translateData.error, translateData.invalidOTP)
+      Alert.alert(translateData?.error || 'Error', translateData?.invalidOTP || 'Invalid OTP')
       setFirebaseloading(false)
     }
   }
@@ -356,13 +356,13 @@ const OtpView: React.FC = () => {
             { color: colors.text, textAlign: textRtlStyle },
           ]}
         >
-          {translateData.otpVerification}
+          {translateData?.otpVerification || 'OTP Verification'}
         </Text>
 
         <Text style={[styles.subtitle, { textAlign: textRtlStyle }]}>
           {isEmail
-            ? `${translateData.enterOtp} ${emailOrPhone}`
-            : `${translateData.enterOtp} ${countryCode} ${emailOrPhone}`}
+            ? `${translateData?.enterOtp || 'Enter OTP sent to'} ${emailOrPhone}`
+            : `${translateData?.enterOtp || 'Enter OTP sent to'} ${countryCode} ${emailOrPhone}`}
         </Text>
         <Text
           style={[
@@ -370,7 +370,7 @@ const OtpView: React.FC = () => {
             { color: colors.text, textAlign: textRtlStyle },
           ]}
         >
-          {translateData.otp}
+          {translateData?.otp || 'OTP'}
         </Text>
         <View style={[styles.inputContainer, { flexDirection: viewRtlStyle }]}>
           <OTPTextView
@@ -398,7 +398,7 @@ const OtpView: React.FC = () => {
       <View style={styles.buttonView}>
         {smsGateway == 'firebase' ? (
           <Button
-            title={translateData.verify}
+            title={translateData?.verify || 'Verify'}
             onPress={handleVerifyOtp}
             loading={firebaseloading}
             backgroundColor={appColors.primary}
@@ -406,7 +406,7 @@ const OtpView: React.FC = () => {
           />
         ) : (
           <Button
-            title={translateData.verify}
+            title={translateData?.verify || 'Verify'}
             onPress={() => {
               if (userType == 'fleet') {
                 handleVerifyFleet();
@@ -424,7 +424,7 @@ const OtpView: React.FC = () => {
       <View style={styles.subView}>
         <View style={[styles.retry, { flexDirection: viewRtlStyle }]}>
           {resendTimer === 0 ? (
-            <Text style={styles.notReceive}>{translateData.notReceived}</Text>
+            <Text style={styles.notReceive}>{translateData?.notReceived || "Didn't receive code?"}</Text>
           ) : null}
           <TouchableOpacity
             onPress={() => {
@@ -436,7 +436,7 @@ const OtpView: React.FC = () => {
             disabled={resendTimer !== 0}
           >
             <Text style={[styles.resend, { color: resendTimer === 0 ? colors.text : 'gray' }]}>
-              {resendTimer === 0 ? translateData.resendIt : `${translateData.resendOtp} ${resendTimer}s`}
+              {resendTimer === 0 ? (translateData?.resendIt || 'Resend It') : `${translateData?.resendOtp || 'Resend OTP in'} ${resendTimer}s`}
             </Text>
           </TouchableOpacity>
         </View>

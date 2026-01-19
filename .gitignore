@@ -50,3 +50,9 @@ task.md
 implementation_plan.md
 walkthrough.md
 github_secrets_guide.md
+
+# Environment Variables
+.env
+.env.local
+.env.production
+.env.*.local

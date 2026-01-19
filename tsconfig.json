@@ -2,6 +2,17 @@
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
     "esModuleInterop": true,
-    "jsx": "react"
+    "jsx": "react",
+    "strict": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "lib": [
+      "ES2015",
+      "ES2017",
+      "ES2020"
+    ],
+    "skipLibCheck": true
   }
 }

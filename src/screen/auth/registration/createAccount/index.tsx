@@ -159,7 +159,7 @@ export function CreateAccount() {
 
     // Check if country is selected
     if (!value || !selectedCountryName) {
-      setCountryError(translateData?.countrycodewarn); // or use translateData
+      setCountryError(translateData?.countrycodewarn || 'Please select a country'); // or use translateData
       hasError = true;
     } else {
       setCountryError('');
@@ -180,16 +180,16 @@ export function CreateAccount() {
     }
 
     if (name === '') {
-      newErrors.name = translateData.pleaseEnterYourName;
+      newErrors.name = translateData?.pleaseEnterYourName || 'Please enter your name';
       hasError = true;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!isEmailUser && emailValue === '') {
-      newErrors.email = translateData.emailVerifyyyyy;
+      newErrors.email = translateData?.emailVerifyyyyy || 'Please enter your email';
       hasError = true;
     } else if (!isEmailUser && !emailRegex.test(emailValue)) {
-      newErrors.email = translateData.emailformateteee;
+      newErrors.email = translateData?.emailformateteee || 'Invalid email format';
       hasError = true;
     }
 
@@ -203,7 +203,7 @@ export function CreateAccount() {
     }
 
     if (formData.password && formData.confirmPassword && formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = translateData.doNotMatch;
+      newErrors.confirmPassword = translateData?.doNotMatch || "Passwords don't match";
       hasError = true;
     }
 
@@ -257,7 +257,7 @@ export function CreateAccount() {
 
     // Add a default option if no countries are available
     if (formatted.length === 0) {
-      formatted.push({ label: translateData?.selectCountry, value: '' });
+      formatted.push({ label: translateData?.selectCountry || 'Select Country', value: '' });
     }
 
     setItems(formatted);
@@ -290,19 +290,19 @@ export function CreateAccount() {
       >
         <View style={styles.space}>
           <TitleView
-            title={translateData.createAccount}
-            subTitle={translateData.registerContent}
+            title={translateData?.createAccount || 'Create Account'}
+            subTitle={translateData?.registerContent || 'Fill in the details below to get started'}
           />
 
           <View style={styles.name}>
             <Input
-              title={translateData.name}
+              title={translateData?.name || 'Name'}
               titleShow={true}
-              placeholder={translateData.enterYourName}
+              placeholder={translateData?.enterYourName || 'Enter your name'}
               value={formData.name}
               onChangeText={text => handleChange('name', text)}
               showWarning={showWarning && formData.name === ''}
-              warning={translateData.pleaseEnterYourName}
+              warning={translateData?.pleaseEnterYourName || 'Please enter your name'}
               backgroundColor={
                 isDark ? appColors.darkThemeSub : appColors.white
               }
@@ -319,7 +319,7 @@ export function CreateAccount() {
               },
             ]}
           >
-            {translateData.mobileNumber}
+            {translateData?.mobileNumber || 'Mobile Number'}
           </Text>
 
           <View style={styles.country}>
@@ -373,7 +373,7 @@ export function CreateAccount() {
               >
                 <TextInput
                   editable={isEmailUser}
-                  placeholder={translateData.enterPhone}
+                  placeholder={translateData?.enterPhone || 'Enter phone number'}
                   placeholderTextColor={isDark ? appColors.darkText : appColors.secondaryFont}
                   value={phoneNumber}
 
@@ -422,7 +422,7 @@ export function CreateAccount() {
               },
             ]}
           >
-            {translateData?.country}
+            {translateData?.country || 'Country'}
           </Text>
 
           <DropDownPicker
@@ -444,7 +444,7 @@ export function CreateAccount() {
               }
             }}
             setItems={setItems}
-            placeholder={items.length > 0 ? translateData?.selectCountry : translateData?.noCountryAvilbel}
+            placeholder={items.length > 0 ? (translateData?.selectCountry || 'Select Country') : (translateData?.noCountryAvilbel || 'No country available')}
             containerStyle={styles.container}
             placeholderStyle={[
               styles.placeholderStyles,
@@ -480,17 +480,17 @@ export function CreateAccount() {
                 <Text style={{ color: colors.text }}>{translateData?.selectCountry}</Text>
               </View>
             )}
-                ArrowDownIconComponent={({ style }) => (
-                            <View style={[{ transform: [{ rotate: '-90deg' }] }]}>
-                                <Icons.Back color={colors.text} />
-                            </View>
-                        )}
-                        ArrowUpIconComponent={({ style }) => (
-                            <View style={[{ transform: [{ rotate: '90deg' }] }]}>
+            ArrowDownIconComponent={({ style }) => (
+              <View style={[{ transform: [{ rotate: '-90deg' }] }]}>
+                <Icons.Back color={colors.text} />
+              </View>
+            )}
+            ArrowUpIconComponent={({ style }) => (
+              <View style={[{ transform: [{ rotate: '90deg' }] }]}>
 
-                                <Icons.Back color={colors.text} />
-                            </View>
-                        )}
+                <Icons.Back color={colors.text} />
+              </View>
+            )}
           />
           {countryError !== '' && (
             <Text style={[styles.errorText, { textAlign: textRtlStyle }]}>
@@ -501,9 +501,9 @@ export function CreateAccount() {
           <View style={styles.email}>
             <Input
               editable={!isEmailUser}
-              title={translateData.email}
+              title={translateData?.email || 'Email'}
               titleShow={true}
-              placeholder={translateData.enterEmail}
+              placeholder={translateData?.enterEmail || 'Enter your email'}
               keyboardType='email-address'
               autoCapitalize='none'
               value={email}
@@ -530,15 +530,15 @@ export function CreateAccount() {
 
 
           <Input
-            title={translateData.createaccount}
+            title={translateData?.createaccount || 'Create Password'}
             titleShow={true}
-            placeholder={translateData.password}
+            placeholder={translateData?.password || 'Password'}
             value={formData.password}
             warning={
               showWarning && formData.password === ''
-                ? translateData.password
+                ? (translateData?.password || 'Password')
                 : formData.password.length > 0 && formData.password.length < 8
-                  ? translateData.passwordMinLength
+                  ? (translateData?.passwordMinLength || 'Password must be at least 8 characters')
                   : ''
             }
             onChangeText={text => handleChange('password', text)}
@@ -563,9 +563,9 @@ export function CreateAccount() {
 
           <View style={styles.password}>
             <Input
-              title={translateData.cPw}
+              title={translateData?.cPw || 'Confirm Password'}
               titleShow={true}
-              placeholder={translateData.confirmPassword}
+              placeholder={translateData?.confirmPassword || 'Confirm password'}
               value={formData.confirmPassword}
               onChangeText={text => handleChange('confirmPassword', text)}
               showWarning={!!error.confirmPassword}
@@ -608,7 +608,7 @@ export function CreateAccount() {
         <View style={styles.margin}>
           <Button
             onPress={gotoDocument}
-            title={translateData.next}
+            title={translateData?.next || 'Next'}
             backgroundColor={appColors.primary}
             color={appColors.white}
           />
