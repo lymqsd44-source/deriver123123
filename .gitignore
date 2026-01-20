@@ -12,6 +12,7 @@ android/build
 android/.gradle
 android/captures
 android/local.properties
+hs_err_pid*.log
 *.iml
 .idea
 .gradle
