@@ -1,5 +1,5 @@
 diff --git a/node_modules/react-native-screens/src/fabric/ScreenStackHeaderConfigNativeComponent.ts b/node_modules/react-native-screens/src/fabric/ScreenStackHeaderConfigNativeComponent.ts
-index fcbb268..patched 100644
+index fcbb268..a1b2c3d 100644
 --- a/node_modules/react-native-screens/src/fabric/ScreenStackHeaderConfigNativeComponent.ts
 +++ b/node_modules/react-native-screens/src/fabric/ScreenStackHeaderConfigNativeComponent.ts
 @@ -1,14 +1,11 @@
